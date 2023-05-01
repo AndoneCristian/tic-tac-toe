@@ -20,7 +20,7 @@ const Board = () => {
 
   const handleClick = (boxIdx) => {
     const updateBoard = board.map((value, idx) => {
-      if (idx === boxIdx && value == null) {
+      if (idx === boxIdx) {
         return xPlaying ? "X" : "O";
       } else {
         return value;
@@ -85,7 +85,7 @@ const Board = () => {
             <Box
               key={boxIdx}
               value={value}
-              handleClick={() => handleClick(boxIdx)}
+              handleClick={() => value == null && handleClick(boxIdx)}
             />
           );
         })}
