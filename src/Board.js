@@ -59,6 +59,7 @@ const Board = () => {
 
   const restartGame = () => {
     setGameOver(false);
+    isXPlaying(true);
     setBoard(Array(9).fill(null));
   };
   return (
